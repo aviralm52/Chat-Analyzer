@@ -82,7 +82,7 @@ if uploaded_file is not None:
         fig, ax1 = plt.subplots()
         ax1.plot(monthly_timeline_df['Time'], monthly_timeline_df['Messages'], color = 'purple')
         plt.xticks(rotation = 'vertical')
-        st.pyplot()
+        st.pyplot(fig)
 
 
         # Daily Timeline
@@ -92,7 +92,7 @@ if uploaded_file is not None:
         fig, ax2  = plt.subplots()
         ax2.plot(daily_timeline_df['Only_date'], daily_timeline_df['Messages'], color = 'aqua')
         plt.xticks(rotation = 40)
-        st.pyplot()
+        st.pyplot(fig)
 
 
         # Activity Map
