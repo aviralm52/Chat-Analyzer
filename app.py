@@ -4,6 +4,7 @@ import preprocessor, helper
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+st. set_page_config(layout="wide")  # this will open streamlit by default in wide-mode
 st.sidebar.title("Whatsapp Chat Analyzer")
 
 # uploaded_file = st.file_uploader("Choose a file")    # this will give the upload option in central screen
