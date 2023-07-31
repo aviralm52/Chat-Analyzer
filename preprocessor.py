@@ -12,9 +12,17 @@ def preprocess(data):
     dates = dates[1:]
 
 
+    # df = pd.DataFrame({'User-Message': messages, 'Message_Date': dates})
+    # # convert message date-type
+    # df['Message_Date'] = pd.to_datetime(df['Message_Date'], format="%d/%m/%y, %H:%M - ")
+    # df.rename(columns={'Message_Date': 'Date'}, inplace=True)
+
     df = pd.DataFrame({'User-Message': messages, 'Message_Date': dates})
     # convert message date-type
-    df['Message_Date'] = pd.to_datetime(df['Message_Date'], format="%d/%m/%y, %H:%M - ")
+    try:
+        df['Message_Date'] = pd.to_datetime(df['Message_Date'], format="%d/%m/%y, %H:%M - ")
+    except:
+        df['Message_Date'] = pd.to_datetime(df['Message_Date'], format="%m/%d/%y, %H:%M - ")
     df.rename(columns={'Message_Date': 'Date'}, inplace=True)
 
 
